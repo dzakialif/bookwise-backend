@@ -1,0 +1,27 @@
+server:
+    port: 4040
+
+spring:
+    application: 
+        name: bookwise
+    
+    datasource:
+        url: jdbc:postgresql://localhost:5432/bookwise_db
+        username: bookwise
+        password: bookwise
+
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        open-in-view: false
+
+    flyway:
+        enabled: true
+        baseline-on-migrate: true
+
+bookwise:
+    jwt:
+        secret: dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBib29rd2lzZSBqd3QgdG9rZW4gc2lnbmluZw==
+        access-token-expiration: 900000
+    refresh-token:
+        expiry-days: 30
