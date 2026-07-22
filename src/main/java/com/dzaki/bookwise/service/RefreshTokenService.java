@@ -54,6 +54,8 @@ public class RefreshTokenService {
         refreshToken.setUser(user);
         refreshToken.setTokenHash(tokenHash);
         refreshToken.setExpiresAt(OffsetDateTime.now().plusDays(expiryDays));
+        refreshToken.setCreatedAt(OffsetDateTime.now());
+        refreshToken.setUpdatedAt(OffsetDateTime.now());
 
         refreshTokenRepo.save(refreshToken);
 

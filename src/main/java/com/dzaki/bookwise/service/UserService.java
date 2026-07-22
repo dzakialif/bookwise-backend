@@ -204,6 +204,8 @@ public class UserService {
             user.setRole(request.getRole());
         }
 
+        user.setUpdatedAt(OffsetDateTime.now());
+
         userRepo.save(user);
 
         return toUserResponse(user);
